@@ -1,4 +1,12 @@
-# Problema 01 - Ler e atualizar um arquivo XML
+# Prova de Java
+
+## Considerações iniciais
+
+1. **Tempo estimado para solução: 2h** (o tempo será medido entre o primeiro e o último commit)
+2. Faça um **fork** deste repositório, resolva localmente e ao final submeta um **pull request** para avaliação.
+3. Necessários conhecimentos básicos de modelagem UML
+
+## Problema 01 - Ler e atualizar um arquivo XML
 
 Dado o arquivo XML com os dados dos alunos `alunos.xml`:
 
@@ -45,19 +53,41 @@ Média geral           8.3
 * Atenção ao alinhamento das colunas
 * Atenção ao formato dos número
 
+## Sugestão para implementação
+
+No arquivo `Problema01.java` há uma sugestão para implementação.
+
+```java
+String filename = "alunos.xml";
+backup( filename, filename + ".bak" );
+MeuContainerEscolhido alunos = lerAlunosDoArquivoXml( filename );
+float mediaGeral = calcularMediaGeral( alunos );
+float notaMaxima = calcularNotaMaxima( alunos );
+float notaMinima = calcularNotaMinima( alunos );
+int quantidadeDeAlunos = calcularQuantidadeDeAlunos( alunos );
+atualizarResumo( filename, mediaGeral, notaMinima, notaMaxima, quantidadeDeAlunos );
+imprimirTabelaDeAlunos( alunos );
+```
+
 ## Diagramas UML
 
 Criar diagramas UML de classe, atividade e sequência para o projeto e substituir as imagens na pasta `img`.
 
 ## Diagrama de classe
 
+Substituir a imagem abaixo pelo diagrama correspondente.
+
 ![Diagrama de classe](img/diagrama_de_classe.png)
 
 ## Diagrama de atividade
 
+Substituir a imagem abaixo pelo diagrama correspondente.
+
 ![Diagrama de atividade](img/diagrama_de_atividade.png)
 
 ## Diagrama de sequência
+
+Substituir a imagem abaixo pelo diagrama correspondente.
 
 ![Diagrama de sequencia](img/diagrama_de_sequencia.png)
 
@@ -75,11 +105,13 @@ número de alunos igual a zero no cálculo da média).
 4. Criar as rotinas teste e indicar como executar os teste.
 Usar JUnit ou qualquer outro framework de teste de sua preferência, o importante é ter como testar as funções.
 
-5. Criar um script `compilar.sh` ou `compilar.bat` para criação do executável.
+5. Criar um script `compilar.sh` (Unix/Linux) ou `compilar.bat` (Windows) para criação do executável.
 
-5. Criar um script `executar_teste.sh` ou `executar_teste.bat` para testar o executável.
+5. Criar um script `executar_teste.sh` (Unix/Linux) ou `executar_teste.bat` (Windows) para testar o executável.
 
 7. Comentar extensivamente o código indicando por que tal abordagem foi escolhida, isto me ajudará a entender suas decisões.
 Por exemplo, "escolhi como container *Vector* em vem de *List* pois me traz a seguinte vantagem..."
 
+8. Os commits devem ser curtos (com o máximo 30 linhas), com foco único e com mensagem de log descritiva.
 
+**Boa sorte**
